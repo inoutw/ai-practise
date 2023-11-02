@@ -1,0 +1,27 @@
+{
+  "name": "chatgpt",
+  "version": "1.0.0",
+  "description": "chatgpt related practice",
+  "main": "function-call.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inoutw/ai-practise.git"
+  },
+  "keywords": [
+    "gpt",
+    "ai",
+    "practice"
+  ],
+  "author": "aiqingmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inoutw/ai-practise/issues"
+  },
+  "homepage": "https://github.com/inoutw/ai-practise#readme",
+  "dependencies": {
+    "openai": "^4.14.1"
+  }
+}

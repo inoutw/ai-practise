@@ -1,0 +1,160 @@
+2023-07-04 14:28:27,473 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 14:28:27,479 ERROR [logger] [utcode_action.py(run:624)] - Traceback (most recent call last):
+  File "D:\work\code\utcode_classic_opt\utcode-classic\utcode_action.py", line 619, in run
+    self.return_data = chat_wenxin(self.text)
+  File "D:\work\code\utcode_classic_opt\utcode-classic\ai_wenxin.py", line 64, in chat
+    + '?' + config.get('wenxin', {}).get('access_token')
+TypeError: bad operand type for unary +: 'str'
+'
+2023-07-04 14:28:42,557 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 14:28:42,559 ERROR [logger] [utcode_action.py(run:624)] - Traceback (most recent call last):
+  File "D:\work\code\utcode_classic_opt\utcode-classic\utcode_action.py", line 619, in run
+    self.return_data = chat_wenxin(self.text)
+  File "D:\work\code\utcode_classic_opt\utcode-classic\ai_wenxin.py", line 64, in chat
+    + '?' + config.get('wenxin', {}).get('access_token')
+TypeError: bad operand type for unary +: 'str'
+'
+2023-07-04 14:28:54,157 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 14:44:17,728 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 14:44:22,316 INFO [logger] [ai_wenxin.py(chat:77)] - do_wenxin_chat Request prompt: 
+{'messages': [{'role': 'user', 'content': '\n根据文档编写测试用例。文档格式分为两部分，接口描述和功能文档\n接口描述定义了用例的输入变量和输出变量，类似如下表格形式\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,0,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n\nINPUT部份定义输入变量，OUTPUT部份定义输出变量,\n功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数\n&&号，$$号，@@，!!，??中间的值不写入测试用例\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =\n*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).\n\n测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数\n\n{\n"test_cases": [\n{\n"Desc": "条件检查电动模式为非活动状态",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "8191",\n"SDFA_TqWhlCrksftFild": "200",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"\n}\n},\n{\n"Desc": "条件检查电动模式为活动状态",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "0",\n"SDFA_TqWhlCrksftFild": "0",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}\n'}, {'role': 'assistant', 'content': 'ok.'}, {'role': 'user', 'content': '接口描述\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,nan,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8111.0\nWTC_TqEngWhlSetPah,0.0,-10000.0,10000.0\nSDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# = \n*SDFA_TqWhlCrksftFild* - *WTC_TqEngWhlSetPah* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for DTRTI_TqWhlP2ReqDeltaWoIntv &(Initial value is 0N.m, ).\n\n根据功能文档逻辑,编写测试用例,参考接口描述中的变量取值范围,要求根据功能描述的逻辑,满足MCDC覆盖要求'}]}'
+2023-07-04 14:44:24,182 INFO [logger] [ai_wenxin.py(chat:97)] - do_wenxin_chat Response body:
+b'{"error_code":100,"error_msg":"Invalid parameter"}''
+2023-07-04 14:44:26,052 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'wenxin', 'status': 1, 'content': b'{"error_code":100,"error_msg":"Invalid parameter"}'}'
+2023-07-04 14:44:41,386 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 14:44:41,386 INFO [logger] [ai_wenxin.py(chat:77)] - do_wenxin_chat Request prompt: 
+{'messages': [{'role': 'user', 'content': '\n根据文档编写测试用例。文档格式分为两部分，接口描述和功能文档\n接口描述定义了用例的输入变量和输出变量，类似如下表格形式\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,0,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n\nINPUT部份定义输入变量，OUTPUT部份定义输出变量,\n功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数\n&&号，$$号，@@，!!，??中间的值不写入测试用例\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =\n*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).\n\n测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数\n\n{\n"test_cases": [\n{\n"Desc": "条件检查电动模式为非活动状态",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "8191",\n"SDFA_TqWhlCrksftFild": "200",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"\n}\n},\n{\n"Desc": "条件检查电动模式为活动状态",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "0",\n"SDFA_TqWhlCrksftFild": "0",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}\n'}, {'role': 'assistant', 'content': 'ok.'}, {'role': 'user', 'content': '接口描述\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,nan,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8111.0\nWTC_TqEngWhlSetPah,0.0,-10000.0,10000.0\nSDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# = \n*SDFA_TqWhlCrksftFild* - *WTC_TqEngWhlSetPah* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for DTRTI_TqWhlP2ReqDeltaWoIntv &(Initial value is 0N.m, ).\n\n根据功能文档逻辑,编写测试用例,参考接口描述中的变量取值范围,要求根据功能描述的逻辑,满足MCDC覆盖要求'}]}'
+2023-07-04 14:44:41,560 INFO [logger] [ai_wenxin.py(chat:97)] - do_wenxin_chat Response body:
+b'{"error_code":100,"error_msg":"Invalid parameter"}''
+2023-07-04 14:44:41,562 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'wenxin', 'status': 1, 'content': b'{"error_code":100,"error_msg":"Invalid parameter"}'}'
+2023-07-04 15:03:24,762 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 15:03:30,778 INFO [logger] [ai_wenxin.py(chat:77)] - do_wenxin_chat Request prompt: 
+{'messages': [{'role': 'user', 'content': '\n根据文档编写测试用例。文档格式分为两部分，接口描述和功能文档\n接口描述定义了用例的输入变量和输出变量，类似如下表格形式\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,0,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n\nINPUT部份定义输入变量，OUTPUT部份定义输出变量,\n功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数\n&&号，$$号，@@，!!，??中间的值不写入测试用例\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =\n*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).\n\n测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数\n\n{\n"test_cases": [\n{\n"Desc": "条件检查电动模式为非活动状态",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "8191",\n"SDFA_TqWhlCrksftFild": "200",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"\n}\n},\n{\n"Desc": "条件检查电动模式为活动状态",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "0",\n"SDFA_TqWhlCrksftFild": "0",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}\n'}, {'role': 'assistant', 'content': 'ok.'}, {'role': 'user', 'content': '接口描述\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,nan,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8111.0\nWTC_TqEngWhlSetPah,0.0,-10000.0,10000.0\nSDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# = \n*SDFA_TqWhlCrksftFild* - *WTC_TqEngWhlSetPah* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for DTRTI_TqWhlP2ReqDeltaWoIntv &(Initial value is 0N.m, ).\n\n根据功能文档逻辑,编写测试用例,参考接口描述中的变量取值范围,要求根据功能描述的逻辑,满足MCDC覆盖要求'}]}'
+2023-07-04 15:03:33,654 INFO [logger] [ai_wenxin.py(chat:97)] - do_wenxin_chat Response body:
+b'{"error_code":100,"error_msg":"Invalid parameter"}''
+2023-07-04 15:03:35,724 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'wenxin', 'status': 1, 'content': b'{"error_code":100,"error_msg":"Invalid parameter"}'}'
+2023-07-04 15:04:02,638 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 15:04:02,787 INFO [logger] [ai_wenxin.py(chat:77)] - do_wenxin_chat Request prompt: 
+{'messages': [{'role': 'user', 'content': '\n根据文档编写测试用例。文档格式分为两部分，接口描述和功能文档\n接口描述定义了用例的输入变量和输出变量，类似如下表格形式\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,0,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n\nINPUT部份定义输入变量，OUTPUT部份定义输出变量,\n功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数\n&&号，$$号，@@，!!，??中间的值不写入测试用例\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =\n*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).\n\n测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数\n\n{\n"test_cases": [\n{\n"Desc": "条件检查电动模式为非活动状态",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "8191",\n"SDFA_TqWhlCrksftFild": "200",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"\n}\n},\n{\n"Desc": "条件检查电动模式为活动状态",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "0",\n"SDFA_TqWhlCrksftFild": "0",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}\n'}, {'role': 'assistant', 'content': 'ok.'}, {'role': 'user', 'content': '接口描述\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,nan,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8111.0\nWTC_TqEngWhlSetPah,0.0,-10000.0,10000.0\nSDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# = \n*SDFA_TqWhlCrksftFild* - *WTC_TqEngWhlSetPah* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for DTRTI_TqWhlP2ReqDeltaWoIntv &(Initial value is 0N.m, ).\n\n根据功能文档逻辑,编写测试用例,参考接口描述中的变量取值范围,要求根据功能描述的逻辑,满足MCDC覆盖要求'}]}'
+2023-07-04 15:04:02,954 INFO [logger] [ai_wenxin.py(chat:97)] - do_wenxin_chat Response body:
+b'{"error_code":100,"error_msg":"Invalid parameter"}''
+2023-07-04 15:04:02,958 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'wenxin', 'status': 1, 'content': b'{"error_code":100,"error_msg":"Invalid parameter"}'}'
+2023-07-04 15:04:39,628 INFO [logger] [utcode_action.py(run:616)] - start request openai'
+2023-07-04 15:04:39,835 INFO [logger] [ai_wenxin.py(chat:77)] - do_wenxin_chat Request prompt: 
+{'messages': [{'role': 'user', 'content': '\n根据文档编写测试用例。文档格式分为两部分，接口描述和功能文档\n接口描述定义了用例的输入变量和输出变量，类似如下表格形式\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,0,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n\nINPUT部份定义输入变量，OUTPUT部份定义输出变量,\n功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数\n&&号，$$号，@@，!!，??中间的值不写入测试用例\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =\n*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).\n\n测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数\n\n{\n"test_cases": [\n{\n"Desc": "条件检查电动模式为非活动状态",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "8191",\n"SDFA_TqWhlCrksftFild": "200",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"\n}\n},\n{\n"Desc": "条件检查电动模式为活动状态",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "0",\n"SDFA_TqWhlCrksftFild": "0",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}\n'}, {'role': 'assistant', 'content': 'ok.'}, {'role': 'user', 'content': '接口描述\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,nan,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8111.0\nWTC_TqEngWhlSetPah,0.0,-10000.0,10000.0\nSDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# = \n*SDFA_TqWhlCrksftFild* - *WTC_TqEngWhlSetPah* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for DTRTI_TqWhlP2ReqDeltaWoIntv &(Initial value is 0N.m, ).\n\n根据功能文档逻辑,编写测试用例,参考接口描述中的变量取值范围,要求根据功能描述的逻辑,满足MCDC覆盖要求'}]}'
+2023-07-04 15:05:00,590 INFO [logger] [ai_wenxin.py(chat:97)] - do_wenxin_chat Response body:
+根据您的要求，我为您编写了以下测试用例：
+
+
+```json
+{
+    "test_cases": [
+        {
+            "Desc": "条件检查电动模式为非活动状态",
+            "Input": {
+                "DTCo_bEleMode": "0",
+                "SDFA_TqWhlCrksftFild": "8191",
+                "WTC_TqEngWhlSetPah": "1000",
+                "SDB_TqWhlP2EmWoutIntv": "500"
+            },
+            "output": {
+                "DTRTI_TqWhlP2ReqDeltaWoIntv": "3191"
+            }
+        },
+        {
+            "Desc": "条件检查电动模式为非活动状态，边界值",
+            "Input": {
+                "DTCo_bEleMode": "0",
+                "SDFA_TqWhlCrksftFild": "-8190",
+                "WTC_TqEngWhlSetPah": "-9999",
+                "SDB_TqWhlP2EmWoutIntv": "-1000"
+            },
+            "output": {
+                "DTRTI_TqWhlP2ReqDeltaWoIntv": "-19099"
+            }
+        },
+        {
+            "Desc": "条件检查电动模式为活动状态",
+            "Input": {
+                "DTCo_bEleMode": "1",
+                "SDFA_TqWhlCrksftFild": "0",
+                "WTC_TqEngWhlSetPah": "0",
+                "SDB_TqWhlP2EmWoutIntv": "0"
+            },
+            "output": {
+                "DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+            }
+        },
+        {
+            "Desc": "条件检查电动模式为活动状态，边界值",
+            "Input": {
+                "DTCo_bEleMode": "1",
+                "SDFA_TqWhlCrksftFild": "8111",
+                "WTC_TqEngWhlSetPah": "10000",
+                "SDB_TqWhlP2EmWoutIntv": "10000"
+            },
+            "output": {
+                "DTRTI_TqWhlP2ReqDeltaWoIntv": "211"
+            }
+        }
+    ]
+}
+```
+这些测试用例覆盖了您提供的接口描述和功能文档中的所有条件和边界情况。请注意，这些测试用例仅包含输出参数和输入参数，并且已根据您的要求进行编写。'
+2023-07-04 15:05:00,593 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'wenxin', 'status': 1, 'content': '根据您的要求，我为您编写了以下测试用例：\n\n\n```json\n{\n    "test_cases": [\n        {\n            "Desc": "条件检查电动模式为非活动状态",\n            "Input": {\n                "DTCo_bEleMode": "0",\n                "SDFA_TqWhlCrksftFild": "8191",\n                "WTC_TqEngWhlSetPah": "1000",\n                "SDB_TqWhlP2EmWoutIntv": "500"\n            },\n            "output": {\n                "DTRTI_TqWhlP2ReqDeltaWoIntv": "3191"\n            }\n        },\n        {\n            "Desc": "条件检查电动模式为非活动状态，边界值",\n            "Input": {\n                "DTCo_bEleMode": "0",\n                "SDFA_TqWhlCrksftFild": "-8190",\n                "WTC_TqEngWhlSetPah": "-9999",\n                "SDB_TqWhlP2EmWoutIntv": "-1000"\n            },\n            "output": {\n                "DTRTI_TqWhlP2ReqDeltaWoIntv": "-19099"\n            }\n        },\n        {\n            "Desc": "条件检查电动模式为活动状态",\n            "Input": {\n                "DTCo_bEleMode": "1",\n                "SDFA_TqWhlCrksftFild": "0",\n                "WTC_TqEngWhlSetPah": "0",\n                "SDB_TqWhlP2EmWoutIntv": "0"\n            },\n            "output": {\n                "DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n            }\n        },\n        {\n            "Desc": "条件检查电动模式为活动状态，边界值",\n            "Input": {\n                "DTCo_bEleMode": "1",\n                "SDFA_TqWhlCrksftFild": "8111",\n                "WTC_TqEngWhlSetPah": "10000",\n                "SDB_TqWhlP2EmWoutIntv": "10000"\n            },\n            "output": {\n                "DTRTI_TqWhlP2ReqDeltaWoIntv": "211"\n            }\n        }\n    ]\n}\n```\n这些测试用例覆盖了您提供的接口描述和功能文档中的所有条件和边界情况。请注意，这些测试用例仅包含输出参数和输入参数，并且已根据您的要求进行编写。'}'
+2023-07-26 10:39:02,200 INFO [logger] [utcode_action.py(run:629)] - start request openai'
+2023-07-26 10:39:02,370 INFO [logger] [ai_wenxin.py(chat:77)] - do_wenxin_chat Request prompt: 
+{'messages': [{'role': 'user', 'content': '\n根据文档编写测试用例。文档格式分为两部分，接口描述和功能文档\n接口描述定义了用例的输入变量和输出变量，类似如下表格形式\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,0,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n\nINPUT部份定义输入变量，OUTPUT部份定义输出变量,\n功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数\n&&号，$$号，@@，!!，??中间的值不写入测试用例\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =\n*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).\n\n测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数\n\n{\n"test_cases": [\n{\n"Desc": "条件检查电动模式为非活动状态",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "8191",\n"SDFA_TqWhlCrksftFild": "200",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"\n}\n},\n{\n"Desc": "条件检查电动模式为活动状态",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "0",\n"SDFA_TqWhlCrksftFild": "0",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}\n'}, {'role': 'assistant', 'content': 'ok.'}, {'role': 'user', 'content': '接口描述\nInput\n变量名,缺省值,最小值,最大值\nDTCo_bEleMode,nan,0.0,1.0\nSDFA_TqWhlCrksftFild,0.0,-8190.0,9191.0\nWTC_TqEngWhlSetPah,0.0,-10000.0,10000.0\nSDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0\nOutput\n变量名,缺省值,最小值,最大值\nDTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0\n功能文档\nIf *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# = \n*SDFA_TqWhlCrksftFild* - *WTC_TqEngWhlSetPah* - *SDB_TqWhlP2EmWoutIntv*\nOtherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=\n& Calibration for DTRTI_TqWhlP2ReqDeltaWoIntv &(Initial value is 0N.m, ).\n\n根据功能文档逻辑,编写测试用例,参考接口描述中的变量取值范围,要求根据功能描述的逻辑,满足MCDC覆盖要求'}]}'
+2023-07-26 10:39:14,490 INFO [logger] [ai_wenxin.py(chat:97)] - do_wenxin_chat Response body:
+根据您提供的接口描述和功能文档，以下是一些测试用例，用于覆盖不同的输入和输出情况。
+
+1. 当DTCo_bEleMode为0时，DTRTI_TqWhlP2ReqDeltaWoIntv的值应为SDFA_TqWhlCrksftFild - WTC_TqEngWhlSetPah - SDB_TqWhlP2EmWoutIntv。
+
+
+```json
+{
+    "test_cases": [
+        {
+            "Desc": "DTCo_bEleMode为0时的测试用例",
+            "Input": {
+                "DTCo_bEleMode": "0",
+                "SDFA_TqWhlCrksftFild": "8191",
+                "WTC_TqEngWhlSetPah": "200",
+                "SDB_TqWhlP2EmWoutIntv": "500"
+            },
+            "output": {
+                "DTRTI_TqWhlP2ReqDeltaWoIntv": "8191 - 200 - 500"
+            }
+        }
+    ]
+}
+```
+2. 当DTCo_bEleMode为1时，DTRTI_TqWhlP2reqDeltaWoIntv的值应为初始值0。
+
+
+```json
+{
+    "test_cases": [
+        {
+            "Desc": "DTCo_bEleMode为1时的测试用例",
+            "Input": {
+                "DTCo_bEleMode": "1",
+                "SDfa_tqwhlcrksftfild": "0",
+                "wtc_tqengwhlsetpah": "0",
+                "sdb_tqwhlp2emwoutintv": "0"
+            },
+            "output": {
+                "dtrti_tqwhlp2reqdeltawointv": "0"
+            }
+        }
+    ]
+}
+```
+这些测试用例覆盖了不同的输入和输出情况，并符合功能文档中的逻辑。请注意，这些值是根据接口描述中的范围选择的，并符合功能文档中的条件和公式。'
+2023-07-26 10:39:14,493 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'wenxin', 'status': 1, 'content': '根据您提供的接口描述和功能文档，以下是一些测试用例，用于覆盖不同的输入和输出情况。\n\n1. 当DTCo_bEleMode为0时，DTRTI_TqWhlP2ReqDeltaWoIntv的值应为SDFA_TqWhlCrksftFild - WTC_TqEngWhlSetPah - SDB_TqWhlP2EmWoutIntv。\n\n\n```json\n{\n    "test_cases": [\n        {\n            "Desc": "DTCo_bEleMode为0时的测试用例",\n            "Input": {\n                "DTCo_bEleMode": "0",\n                "SDFA_TqWhlCrksftFild": "8191",\n                "WTC_TqEngWhlSetPah": "200",\n                "SDB_TqWhlP2EmWoutIntv": "500"\n            },\n            "output": {\n                "DTRTI_TqWhlP2ReqDeltaWoIntv": "8191 - 200 - 500"\n            }\n        }\n    ]\n}\n```\n2. 当DTCo_bEleMode为1时，DTRTI_TqWhlP2reqDeltaWoIntv的值应为初始值0。\n\n\n```json\n{\n    "test_cases": [\n        {\n            "Desc": "DTCo_bEleMode为1时的测试用例",\n            "Input": {\n                "DTCo_bEleMode": "1",\n                "SDfa_tqwhlcrksftfild": "0",\n                "wtc_tqengwhlsetpah": "0",\n                "sdb_tqwhlp2emwoutintv": "0"\n            },\n            "output": {\n                "dtrti_tqwhlp2reqdeltawointv": "0"\n            }\n        }\n    ]\n}\n```\n这些测试用例覆盖了不同的输入和输出情况，并符合功能文档中的逻辑。请注意，这些值是根据接口描述中的范围选择的，并符合功能文档中的条件和公式。'}'
+2023-07-26 10:39:18,618 INFO [logger] [utcode_action.py(run:629)] - start request openai'
+2023-07-26 10:39:37,821 INFO [logger] [ai_chatgpt.py(chat:40)] - <Response [200]>'
+2023-07-26 10:39:37,824 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'chatgpt', 'status': 1, 'content': '{\n"test_cases": [\n{\n"Desc": "电动模式为非活动状态，满足条件",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "-8190",\n"WTC_TqEngWhlSetPah": "10000",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"Output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "-8190-10000-500"\n}\n},\n{\n"Desc": "电动模式为非活动状态，不满足条件，超出取值范围",\n"Input": {\n"DTCo_bEleMode": "0",\n"SDFA_TqWhlCrksftFild": "-10000",\n"WTC_TqEngWhlSetPah": "10000",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"Output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "-10000-10000-0"\n}\n},\n{\n"Desc": "电动模式为活动状态，满足条件",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "-8190",\n"WTC_TqEngWhlSetPah": "10000",\n"SDB_TqWhlP2EmWoutIntv": "500"\n},\n"Output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n},\n{\n"Desc": "电动模式为活动状态，不满足条件，超出取值范围",\n"Input": {\n"DTCo_bEleMode": "1",\n"SDFA_TqWhlCrksftFild": "-10000",\n"WTC_TqEngWhlSetPah": "10000",\n"SDB_TqWhlP2EmWoutIntv": "0"\n},\n"Output": {\n"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n}\n}\n]\n}'}'
+2023-07-26 10:39:50,009 INFO [logger] [utcode_action.py(run:629)] - start request openai'
+2023-07-26 10:39:59,568 INFO [logger] [ai_chatgpt.py(chat:40)] - <Response [200]>'
+2023-07-26 10:39:59,571 INFO [logger] [utcode_action.py(request_thread_complete:103)] - {'ai_model_type': 'chatgpt', 'status': 1, 'content': '{\n  "test_cases": [\n    {\n      "Desc": "DTCo_bEleMode is inactive",\n      "Input": {\n        "DTCo_bEleMode": "0",\n        "SDFA_TqWhlCrksftFild": "8193",\n        "WTC_TqEngWhlSetPah": "1000",\n        "SDB_TqWhlP2EmWoutIntv": "500"\n      },\n      "output": {\n        "DTRTI_TqWhlP2ReqDeltaWoIntv": "8193-1000-500"\n      }\n    },\n    {\n      "Desc": "DTCo_bEleMode is active",\n      "Input": {\n        "DTCo_bEleMode": "1",\n        "SDFA_TqWhlCrksftFild": "0",\n        "WTC_TqEngWhlSetPah": "0",\n        "SDB_TqWhlP2EmWoutIntv": "0"\n      },\n      "output": {\n        "DTRTI_TqWhlP2ReqDeltaWoIntv": "0"\n      }\n    }\n  ]\n}'}'

@@ -1,0 +1,17 @@
+[openai]
+url = "https://121.40.104.79/v1/chat/completions"
+authorization = "Bearer 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"
+timeout = 90
+
+[wenxin]
+url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions"
+api_key = "7MwNbHqQ02Op15LatCheCYxK"
+secret_key = "RDL2UZcM3kI7tiG4W43L8Xm5dLCWDhfe"
+timeout = 90
+
+[baseReq]
+timeout = 10
+
+
+[cache]
+type = "db"

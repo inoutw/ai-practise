@@ -1,0 +1,112 @@
+{
+"test_cases": [
+{
+"Desc": "DTCo_bEleMode为非活动状态，计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "0",
+"SDFA_TqWhlCrksftFild": "1000",
+"WTC_TqEngWhlSetPah": "500",
+"SDB_TqWhlP2EmWoutIntv": "200"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "300"
+}
+},
+{
+"Desc": "DTCo_bEleMode为活动状态，使用初始值计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "1",
+"SDFA_TqWhlCrksftFild": "0",
+"WTC_TqEngWhlSetPah": "0",
+"SDB_TqWhlP2EmWoutIntv": "0"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+}
+},
+{
+"Desc": "DTCo_bEleMode为活动状态，修改Calibration值，计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "1",
+"SDFA_TqWhlCrksftFild": "2000",
+"WTC_TqEngWhlSetPah": "0",
+"SDB_TqWhlP2EmWoutIntv": "1000"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+}
+},
+{
+"Desc": "DTCo_bEleMode为非活动状态，SDFA_TqWhlCrksftFild为最小值，计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "0",
+"SDFA_TqWhlCrksftFild": "-8190",
+"WTC_TqEngWhlSetPah": "500",
+"SDB_TqWhlP2EmWoutIntv": "200"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "-8910"
+}
+},
+{
+"Desc": "DTCo_bEleMode为活动状态，SDFA_TqWhlCrksftFild为最大值，计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "1",
+"SDFA_TqWhlCrksftFild": "8191",
+"WTC_TqEngWhlSetPah": "0",
+"SDB_TqWhlP2EmWoutIntv": "1000"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+}
+},
+{
+"Desc": "DTCo_bEleMode为活动状态，WTC_TqEngWhlSetPah为最小值，使用初始值计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "1",
+"SDFA_TqWhlCrksftFild": "0",
+"WTC_TqEngWhlSetPah": "-10000",
+"SDB_TqWhlP2EmWoutIntv": "0"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+}
+},
+{
+"Desc": "DTCo_bEleMode为非活动状态，WTC_TqEngWhlSetPah为最大值，计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "0",
+"SDFA_TqWhlCrksftFild": "1000",
+"WTC_TqEngWhlSetPah": "10000",
+"SDB_TqWhlP2EmWoutIntv": "200"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "-8200"
+}
+},
+{
+"Desc": "DTCo_bEleMode为活动状态，SDB_TqWhlP2EmWoutIntv为最小值，使用初始值计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "1",
+"SDFA_TqWhlCrksftFild": "0",
+"WTC_TqEngWhlSetPah": "0",
+"SDB_TqWhlP2EmWoutIntv": "-10000"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+}
+},
+{
+"Desc": "DTCo_bEleMode为非活动状态，SDB_TqWhlP2EmWoutIntv为最大值，计算DTRTI_TqWhlP2ReqDeltaWoIntv",
+"Input": {
+"DTCo_bEleMode": "0",
+"SDFA_TqWhlCrksftFild": "1000",
+"WTC_TqEngWhlSetPah": "500",
+"SDB_TqWhlP2EmWoutIntv": "10000"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "-7400"
+}
+}
+]
+}

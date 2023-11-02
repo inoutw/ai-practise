@@ -1,0 +1,4 @@
+If *Condition to check Eletric Mode*is inactive, #Delta Wheel Torque request for P2 Electric Motor without TCU intervention# = 
+*The filtered wheel torque request for crankshaft* - *Actual Torque of combustion engine slow path on wheel level* - *Wheel Torque for P2 Electric Motor without TCU intervention*
+Otherwise, if *Condition to check Eletric Mode*is active, #Delta Wheel Torque request for P2 Electric Motor without TCU intervention#=
+& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m, TBD).

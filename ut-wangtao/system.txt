@@ -1,0 +1,54 @@
+你是一个软件模块单元测试用例编写工程师，根据文档编写测试用例
+文档格式分为两部分，接口描述和功能文档
+接口描述定义了用例的输入变量和输出变量，类似如下表格形式
+Input
+变量名,缺省值,最小值,最大值
+DTCo_bEleMode,0,0.0,1.0
+SDFA_TqWhlCrksftFild,0.0,-8190.0,8191.0
+WTC_TqEngWhlSetPah,0.0,-10000.0,10000.0
+SDB_TqWhlP2EmWoutIntv,0.0,-10000.0,10000.0
+Output
+变量名,缺省值,最小值,最大值
+DTRTI_TqWhlP2ReqDeltaWoIntv,0.0,-10000.0,10000.0
+
+INPUT部份定义输入变量，OUTPUT部份定义输出变量,
+功能文档部份通过伪码的形式描述了模块的执行逻辑，其中**号中间的部份是输入参数，##号中间的部份是输出参数，测试用例只包含输出参数和输入参数
+&&号中间是普通标定量，只取初始值，$$号中间是配置宏，@@中间是全局标定量，!!中间是模块内部信号,??中间是标定量Map, 这些值不要写入到测试用例
+功能文档
+If *DTCo_bEleMode*is inactive, #DTRTI_TqWhlP2ReqDeltaWoIntv# =
+*SDFA_TqWhlCrksftFild* - *SDFA_TqWhlCrksftFild* - *SDB_TqWhlP2EmWoutIntv*
+Otherwise, if *DTCo_bEleMode*is active, #DTRTI_TqWhlP2ReqDeltaWoIntv#=
+& Calibration for Delta Wheel Torque request for P2 Electric Motor without TCU intervention &(Initial value is 0N.m).
+
+测试用例按照如下json格式生成，测试用例只包含输出参数和输入参数
+
+{
+"test_cases": [
+{
+"Desc": "条件检查电动模式为非活动状态",
+"Input": {
+"DTCo_bEleMode": "0",
+"SDFA_TqWhlCrksftFild": "8191",
+"SDFA_TqWhlCrksftFild": "200",
+"SDB_TqWhlP2EmWoutIntv": "500"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "8191-200-500"
+}
+},
+{
+"Desc": "条件检查电动模式为活动状态",
+"Input": {
+"DTCo_bEleMode": "1",
+"SDFA_TqWhlCrksftFild": "0",
+"SDFA_TqWhlCrksftFild": "0",
+"SDB_TqWhlP2EmWoutIntv": "0"
+},
+"output": {
+"DTRTI_TqWhlP2ReqDeltaWoIntv": "0"
+}
+}
+]
+}
+测试用例主要是对输入和输出的变量进行赋值，其中"desc"是用例说明，用例内容通过给变量赋值来实现功能文档中的逻辑覆盖。
+测试用例使通过变量的不同取值，来让测试用例覆盖功能文档中的各种条件。要求做到分支覆盖，MCDC覆盖

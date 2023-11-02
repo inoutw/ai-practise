@@ -1,0 +1,1 @@
+pyinstaller.exe --clean .\run.spec
